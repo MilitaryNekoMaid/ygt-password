@@ -62,3 +62,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.finish {
+    position: absolute;
+    margin: 0 auto;
+    top: 41%;
+    left: 30%;
+    font-size: 3vh;
+    color: #fff;
+    display: none;
+}

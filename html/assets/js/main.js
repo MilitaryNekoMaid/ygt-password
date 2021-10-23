@@ -18,17 +18,28 @@ function openUi(){
             focusMethod();
             setTimeout(function(){
                 $('.input').css('display', 'none');
-                $('.container').css('display', 'none');
+                $('.finish').css('display', 'block');
                 if(password == $("#password-input").val()){
-                    $.post('http://ygt_password/close', JSON.stringify({
-                        result: true
-                    }));
+                    $('#finish-text').html('Hack İşlemi Başarılı!');
                 } else {
-                    $.post('http://ygt_password/close', JSON.stringify({
-                        result: false
-                    }));
+                    $('#finish-text').html('Hack İşlemi Başarısız!');
                 }
-                $("#password-input").val("");
+                setTimeout(function(){
+                    if(password == $("#password-input").val()){
+                        $.post('http://ygt_password/close', JSON.stringify({
+                            result: true
+                        }));
+                        $('#finish-text').html('Hack İşlemi Başarılı!');
+                    } else {
+                        $.post('http://ygt_password/close', JSON.stringify({
+                            result: false
+                        }));
+                        $('#finish-text').html('Hack İşlemi Başarısız!');
+                    }
+                    $("#password-input").val("");
+                    $('.finish').css('display', 'none');
+                    $('.container').css('display', 'none');
+                }, 2000);
             }, 5000);
         }, 4000);
     }, 3000);
