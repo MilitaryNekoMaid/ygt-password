@@ -1,5 +1,5 @@
 ## Description
-Password minigame for FiveM.
+🔒 Password minigame for FiveM.
 
 ## Preview
 https://youtu.be/h3vJ8ut9ysI
